@@ -1,10 +1,13 @@
  // JavaScript Variables and Objects
 
-// Hice Pair con [yo, con] en este reto .
+// Hice Pair con [melissa, nicolas] en este reto .
 
 // __________________________________________
 // Escribe tu codigo aca.
-
+var secretNumber = 7
+var password = 'just open the door'
+var allowedIn = false
+var members = ['Juan', 2,3,"German"]
 
 
 
