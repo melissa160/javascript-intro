@@ -9,8 +9,9 @@ var password = 'just open the door'
 var allowedIn = false
 var members = ['Juan', 2,3,"German"]
 
+console.log('Yeahh')
 
-
+var secretNumber = 5
 
 
 
