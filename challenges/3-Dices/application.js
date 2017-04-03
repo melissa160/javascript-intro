@@ -1,14 +1,43 @@
 $(document).ready(function() {
-  $('#roller button.add').on('click', function() {
-    $('.dice').append('<div class="die">0</div>');
-  });
+	
 
-  $('#roller button.roll').on('click', function() {
-    $('.die').each(function(k, die) {
-      var value = Math.floor((Math.random()*6)+1);
-      $(die).text(value);
-    });
-  });
+
+
+
+//view
+  function createDie(){
+    $('.dice').append('<div class="die">0</div>');
+  }
+
+  function showNum(){
+    return $(die).text(value)
+  }
+
+//model
+  function rando(k, die) {
+    var value = Math.floor((Math.random()*6)+1);
+    showNum();
+  }
+
+
+
+//controller
+
+  function rollDie() {
+    $('.die').each(rando);
+  }
+  
+  $('#roller button.add').on('click', CreateDie);
+
+  $('#roller button.roll').on('click', rollDie );
+
+
+
+
+
+
+
+
 });
 
 
