@@ -1,4 +1,4 @@
-# Introduction to JavaScript AKA: ECMAscript 
+# Introduction to JavaScript AKA: ECMAscript
 
 - Lenguaje pequeño diseñado para ser incluido en diferentes entornos -- como el navegador
 - Provee control programatico sobre el DOM
@@ -35,7 +35,6 @@
   - local: disponible solo dentro de funcion donde se define
   - global: disponible en cualquier lado
   - No hay scope por bloque *Hasta hace poco*
-- `var` keyword for declaring variables
 - Variables Globales
   - El scope global es el `window` para los navegadores. `window.variable_name`
 - Constantes
