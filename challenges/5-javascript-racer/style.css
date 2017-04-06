@@ -1,12 +1,20 @@
 .racer_table td {
-  background-color: peru;
-  height: 20px;
-  width: 20px;
+  /*background-color: peru;*/
+  height: 50px;
+  width: 110px;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid peru;
+  border-top: 1px solid peru;
 }
 
 .racer_table td.active {
   background-color: transparent;
-  background-image: url("https://thumbs.dreamstime.com/z/cartoon-car-2197595.jpg");
+  background-image: url("car.gif");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.counter{
+	
 }

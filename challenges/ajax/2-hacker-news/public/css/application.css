@@ -117,3 +117,7 @@ form#posts input[type='submit'] {
 
 
 }
+
+article a.vote-button.voted {
+  color: orange;
+}
