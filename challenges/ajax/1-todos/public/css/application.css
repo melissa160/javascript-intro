@@ -11,3 +11,8 @@
 .todo.complete h2 {
   text-decoration: line-through;
 }
+
+
+a {
+ cursor: pointer;
+}

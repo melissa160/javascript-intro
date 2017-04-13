@@ -1,23 +1,32 @@
 <div id="todo">
   <div class="toolbox">
-    <form action="/add_todo" method="post">
-      <input type="text" class="todo" value="Put your todo item here!"/>
+    <form class="addTodo" action="/todos" method="post">
+      <input type="text" name="content" placeholder="Put your todo item here!"/>
       <input type="submit" value="Add Todo"/>
-      <!-- <button class="add" type="submit">Add Todo</button> -->
     </form>
   </div>
 
   <div class="todo_list">
-
+    <% @all_todos.each do |todo| %>
+      <%= erb :"_todo", layout: false, locals: {todo: todo} %>
+    <% end %>
   </div>
 
-  <div id="todo_template" style="display: none;">
-    <div class="todo">
-      <h2>Todo Name</h2>
-      <ul>
-        <li><a href="#" class="delete">Delete</a></li>
-        <li><a href="#" class="complete">Complete</a></li>
-      </ul>
+
+
+  <div id="todo_template">
+  <!-- <div id="todo_template"> -->
+  </div>
+  <script id="entry_template" type="text/x-handlebars-template">
+    <div class="todo" style="display: none;">
+      <article id="{{ todo.id  }}">
+        <span>{{todo.id }}</span>
+        <span class="content">{{todo.todo_content}}</span>  
+        <a class="edit"  href="/todos/{{todo.id}}/edit">Edit</a>
+        <a class="delete"  href="/todos/{{todo.id }}">basura</a>
+        <!-- <i class="fa fa-trash-o" aria-hidden="true"></i> -->
+      </article>
     </div>
-  </div>
+  </script>
+
 </div>
