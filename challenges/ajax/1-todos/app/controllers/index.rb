@@ -1,21 +1,20 @@
 # index
 get '/' do
-  redirect '/todos'
+  erb :index
 end
 
 get '/todos' do
-  @all_todos = Todo.all
-  erb :index
+  all_todos = Todo.all
+  all_todos = all_todos.sort_by{ |t| t.id }
+  content_type :json
+  {todos: all_todos}.to_json
 end
 
 #create
 post '/todos' do
-  # p '*'*50
   todo = Todo.new(todo_content: params[:content])
   if todo.save
-    # erb :"_todo", layout: false, locals: {todo: todo}
-    content_type :json
-    {id: todo.id, todo_content: todo.todo_content }.to_json
+    redirect '/todos'
   else
 
   end
@@ -23,18 +22,8 @@ end
 
 #new
 
-#show
-
-#edit
-get "/todos/:id/edit" do
-  @todo = Todo.find_by(id: params[:id]) 
-  erb :edit
-end
-
 #update
-patch "/todos/:id" do
-  p '*'*50
-  p "en patch"
+patch "/todos/:id/edit" do
   todo = Todo.find_by(id: params[:id])
   todo.update(todo_content: params[:content])
   redirect "/todos"
@@ -43,12 +32,9 @@ end
 
 #delete
 delete "/todos/:id" do
-  p '*'*50
-  p "en delete"
   todo = Todo.find_by(id: params[:id])
   todo.delete
-  content_type :json
-  {id: todo.id}.to_json
+  redirect '/todos'
 end
 
 get '/todos/:id' do

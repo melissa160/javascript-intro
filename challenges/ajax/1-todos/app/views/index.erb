@@ -1,32 +1,34 @@
 <div id="todo">
   <div class="toolbox">
+  <!-- formulario para adicionar ToDo -->
     <form class="addTodo" action="/todos" method="post">
       <input type="text" name="content" placeholder="Put your todo item here!"/>
       <input type="submit" value="Add Todo"/>
     </form>
   </div>
 
-  <div class="todo_list">
-    <% @all_todos.each do |todo| %>
-      <%= erb :"_todo", layout: false, locals: {todo: todo} %>
-    <% end %>
+  <div id="todo_template" class="todo_list">
   </div>
 
-
-
-  <div id="todo_template">
-  <!-- <div id="todo_template"> -->
-  </div>
+  <!-- Template para renderizar la lista de ToDos -->
   <script id="entry_template" type="text/x-handlebars-template">
-    <div class="todo" style="display: none;">
-      <article id="{{ todo.id  }}">
-        <span>{{todo.id }}</span>
-        <span class="content">{{todo.todo_content}}</span>  
-        <a class="edit"  href="/todos/{{todo.id}}/edit">Edit</a>
-        <a class="delete"  href="/todos/{{todo.id }}">basura</a>
-        <!-- <i class="fa fa-trash-o" aria-hidden="true"></i> -->
+    {{#each todos}}
+      <article id="{{ id  }}">
+        <span>{{id }}.</span>
+        <span class="content">{{todo_content}}  </span>  
+        <a class="edit"  href="#" data-id="{{id}}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+        <a class="delete"  href="/todos/{{id}}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
       </article>
-    </div>
+    {{/each}}
+  </script>
+
+  <!-- Template para editar un ToDo -->
+  <script id="edit_template" type="text/x-handlebars-template">
+    <form class="edit-form" method="post" action="/todos/{{id}}/edit">
+      <input type="hidden" name="_method" value="patch">
+      <input name="content" type="text" value="{{todo_content}}">
+      <input type="submit" value="Guardar">
+    </form>
   </script>
 
 </div>
