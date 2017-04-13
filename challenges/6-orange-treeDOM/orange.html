@@ -4,31 +4,37 @@
   <title>Arbol de Naranjsa</title>
   <link rel="stylesheet" type="text/css" href="app/css/normalize.css">
   <link rel="stylesheet" type="text/css" href="app/css/application.css">
-
+  <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+ 
   <script src="app/javascripts/solution.js"></script>
   <script src="app/javascripts/view.js"></script>
 
 </head>
 <body>
-  <header>
-    Bienvenido a Arbol de Naranjas
-  </header>
+<div class="container">
+  <h1>Welcome to Oranges</h1>
 
   <div class="grove">
-    <button class="plant">Planta un Arbol de Naranjas</button>
+    <button class="plant">Plant an orange tree</button>
+    <button class="reset hide">Restart</button>
   </div>
 
-  <div id="orange-tree-template">
+  <div id="orange-tree-template" class="hide">
     <div class="orange-tree">
-      <h2>Nombre del Arbol</h2>
-      <p class="age">Edad: 0</p>
-      <p class="fruit-count">Frutas: 0</p>
-      <button class="pick">Recoger!</button>
-      <button class="age">Envejecer!</button>
-      <div class="display-tree-big"><div>
+      <h2>Orange Tree</h2>
+      <div class="data">
+        <p class="age">Age: <span>0</span></p>
+        <p class="fruit-count">Fruit: <span>0</span></p>
       </div>
-    </div>
+      <!-- <a href="#"><canvas id="canvas" width=300 height=300></canvas>ddddd</a>  -->
+      <button class="pick">Pick Orange!</button>
+      <button class="age">Grow Tree!</button>
+      <p class="pick-text hide"></p>
+      <div class="display-tree-big">
+        
 
-  </body>
-  </html>
+      </div>
+</div>
+</body>
+</html>

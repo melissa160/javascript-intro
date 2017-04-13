@@ -24,15 +24,15 @@ delete '/posts/:id' do
 end
 
 post '/posts' do
-  @post = Post.new( title: params[:title],
+  post = Post.new( title: params[:title],
                username: Faker::Internet.user_name,
                comment_count: rand(1000) )
-  if @post.save
+  if post.save
     p "*"*30
-    erb :_post, {layout: false}
+    erb :"_post", layout: false, locals: {post: post}
   else
     p "X"*30
-    error_msg = @post.errors.full_messages
+    error_msg = post.errors.full_messages
     p error_msg
     status 400
     content_type :json

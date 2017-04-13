@@ -3,40 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <title>Racer</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
-<button id="start" type="button">Start!</button>
-<button id="restart" type="button">Restart!</button>
-<div class="counter">
-	<h1 id="counter">3</h1>
+<div class="container">
+<h1 class="text-center">Car Race</h1>
+<h4>The player1 moves its car by undoing the P key and the player2 the Q key. Enter each player name and press start, wait for the count to end.</h4>
+  <div class="row start-game text-center">
+    <div class="col-md-6 col-lg-7 col-xs-12 col-sm-12" >
+      <h3>Players:</h3>
+      <input type="text" placeholder="Name player 1" name="player1" class="form-control">
+      <input type="text" placeholder="Name player 2" name="player2" class="form-control">
+      <!-- <div class="buttons"> -->
+        <button id="start" type="button" class="btn btn-primary">Start!</button>
+        <button id="restart" type="button" class="btn btn-warning">Restart!</button>
+      <!-- </div> -->
+    </div>
+    <div class="counter col-md-6 col-lg-5 col-xs-12 col-sm-12">
+      <p class="text-center"><span class="glyphicon glyphicon-time"></span> Timer</p>
+      <p id="counter" class="text-center">3</p>
+    </div>
+  </div>
+  <div class="row track">
+  <table class="racer_table">
+    <tr id="player1_strip">
+      <td class="active player1">Player1</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="goal"></td>
+    </tr>
+    <tr id="player2_strip">
+      <td class="active player2">Player2</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="goal"></td>
+    </tr>
+  </table>
+  </div>
 </div>
-<table class="racer_table">
-  <tr id="player1_strip">
-    <td class="active"></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td class="goal"></td>
-  </tr>
-  <tr id="player2_strip">
-    <td class="active"></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td class="goal"></td>
-  </tr>
-</table>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="app.js"></script>
 </body>

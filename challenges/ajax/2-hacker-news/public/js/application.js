@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('.vote-button').on('click', function(e){
+  $('.post-container').on('click', '.vote-button', function(e){
   	e.preventDefault();
 
   	var url = this.href
@@ -17,6 +17,7 @@ $(document).ready(function() {
   	// debugger
   })
 
+  //adicionar post
   $('form').on('submit', function(event){
     event.preventDefault()
     var title = $(this).find('input[name="title"]').val()
@@ -41,7 +42,7 @@ $(document).ready(function() {
   })
 
 
-  $('.delete').on('click', function(event){
+  $('.post-container').on('click', '.delete', function(event){
     var deleteSelect = this
     event.preventDefault()
     var url = this.href

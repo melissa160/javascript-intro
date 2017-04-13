@@ -3,7 +3,18 @@
 //------------------------------------------------------------------------------------------------------------------
 // TU CODIGO: Crea un Objeto literal "garden", y funcion constuctora y prototipos para Flower aca.
 //------------------------------------------------------------------------------------------------------------------
+var garden = {
+  name: "Kula Botanical Garden",
+  location: "Makawao"
+}
+// function Garden() {
+//   this.name = "Kula Botanical Garden"
+// }
+// function Flower(){
 
+// }
+
+// Flower.prototype.
 
 //------------------------------------------------------------------------------------------------------------------
 // PRUEBAS: **NO** Cambies nada debajo de esta linea. Tu trabajo es implementar el codigo arriba para hacer que estas pruebas pasen.
@@ -33,6 +44,8 @@ var flowers = [
 
 function Garden() {
   this.flowers = []
+  // this.name = "Kula Botanical Garden",
+  // this.location= "Makawao"
 }
 
 Garden.prototype.plant = function(flowers) {
